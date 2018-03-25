@@ -1,0 +1,28 @@
+{
+  "name": "student-voting-system",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "concurrently \"npm install\" \"cd public/myapp && npm install\"",
+    "ng-start": "cd ./public/myapp && npm start",
+    "express-start": "nodemon ./bin/www",
+    "start": "concurrently \"npm run express-start\" \"npm run ng-start\""
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "ejs": "~2.5.7",
+    "express": "~4.16.0",
+    "http-errors": "~1.6.2",
+    "morgan": "~1.9.0",
+    "bluebird": "^3.5.1",
+    "bcrypt-nodejs": "0.0.3",
+    "jsonwebtoken": "^8.1.0",
+    "serve-favicon": "~2.4.2"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.0",
+    "nodemon": "^1.12.1",
+    "path": "^0.12.7"
+  }
+}
