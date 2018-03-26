@@ -19,7 +19,9 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "styles.css"
+        "assets/css/mdl-light-blue.min.css",
+        "assets/css/material-icons.css",
+        "assets/css/global.css"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
