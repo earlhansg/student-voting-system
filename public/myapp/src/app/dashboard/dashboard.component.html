@@ -1,0 +1,89 @@
+<div class="demo-container" mdl-shadow="2">
+   <mdl-layout mdl-layout-fixed-header mdl-layout-fixed-drawer>
+
+     <mdl-layout-header>
+        <mdl-layout-header-row>
+           <mdl-layout-title>
+             <i class="fa fa-handshake-o"></i>
+                Student Government Voting System
+           </mdl-layout-title>
+           <mdl-layout-spacer></mdl-layout-spacer>
+           <nav class="mdl-navigation">
+              <a class="mdl-navigation__link header-icon" [routerLink]="['/layout/l1']">
+                <i class="fa fa-bell" aria-hidden="true"></i>
+              </a>
+              <a class="mdl-navigation__link header-icon" [routerLink]="['/layout/l2']">
+                <i class="fa fa-sign-out" aria-hidden="true"></i>
+              </a>
+           </nav>
+        </mdl-layout-header-row>
+     </mdl-layout-header>
+
+      <mdl-layout-drawer>
+         <mdl-layout-title>
+           <img src="../../assets/images/userpicture.png" alt="user">
+
+           <div class="admin-info">
+             <small class="admin-name">Earl Hans Genoso</small><br>
+
+             <a class="admin-edit">Edit Profile
+              <i class="fa fa-pencil" aria-hidden="true"></i>
+            </a>
+           </div>
+
+         </mdl-layout-title>
+         <nav class="mdl-navigation">
+            <small class="nav-main margin-nav">Main</small>
+            <a class="mdl-navigation__link" >
+              <i class="fa fa-home margin-nav" aria-hidden="true"></i>
+                Home
+            </a>
+            <a class="mdl-navigation__link" >
+              <i class="fa fa-building-o margin-nav" aria-hidden="true"></i>
+                College
+            </a>
+            <a class="mdl-navigation__link" >
+              <i class="fa fa-building-o margin-nav" aria-hidden="true"></i>
+                Department
+            </a>
+            <a class="mdl-navigation__link" >
+              <i class="fa fa-users margin-nav" aria-hidden="true"></i>
+                Students
+            </a>
+            <hr>
+            <small class="nav-main margin-nav">Election</small>
+            <a class="mdl-navigation__link" >
+              <i class="fa fa-star-o margin-nav" aria-hidden="true"></i>
+                Positions
+            </a>
+            <a class="mdl-navigation__link" >
+              <i class="fa fa-handshake-o margin-nav" aria-hidden="true"></i>
+                Officers
+            </a>
+            <a class="mdl-navigation__link" >
+              <i class="fa fa-hand-paper-o margin-nav" aria-hidden="true"></i>
+                Election
+            </a>
+            <a class="mdl-navigation__link" >
+              <i class="fa fa-pencil-square-o margin-nav" aria-hidden="true"></i>
+                Tally
+            </a>
+            <div class="hide-icon">
+              <a class="mdl-navigation__link">
+                <i class="fa fa-bell margin-nav hide-icon" aria-hidden="true"></i>
+                  Notification
+              </a>
+              <a class="mdl-navigation__link hide-icon">
+                <i class="fa fa-sign-out margin-nav" aria-hidden="true"></i>
+                  Logout
+              </a>
+            </div>
+         </nav>
+      </mdl-layout-drawer>
+
+      <mdl-layout-content>
+         <!-- Your content goes here -->
+      </mdl-layout-content>
+
+   </mdl-layout>
+<!-- </div> -->

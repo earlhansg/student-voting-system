@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-landing',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route: ActivatedRoute,
+              private router: Router) { }
 
   ngOnInit() {
+  }
+
+  goTO() {
+    console.log("hello");
+    this.router.navigate(['dashboard']);
   }
 
 }
