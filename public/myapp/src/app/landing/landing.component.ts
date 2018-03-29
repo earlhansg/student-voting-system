@@ -15,7 +15,6 @@ export class LandingComponent implements OnInit {
   }
 
   goTO() {
-    console.log("hello");
     this.router.navigate(['dashboard']);
   }
 

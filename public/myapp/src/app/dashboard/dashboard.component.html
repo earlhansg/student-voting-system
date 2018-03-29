@@ -38,7 +38,7 @@
               <i class="fa fa-home margin-nav" aria-hidden="true"></i>
                 Home
             </a>
-            <a class="mdl-navigation__link" >
+            <a class="mdl-navigation__link" [routerLink]="['college']">
               <i class="fa fa-building-o margin-nav" aria-hidden="true"></i>
                 College
             </a>
@@ -83,6 +83,7 @@
 
       <mdl-layout-content>
          <!-- Your content goes here -->
+         <router-outlet></router-outlet>
       </mdl-layout-content>
 
    </mdl-layout>

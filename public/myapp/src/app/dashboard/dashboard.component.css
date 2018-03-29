@@ -98,3 +98,7 @@ img {
   margin-left: 14px;
   margin-right: 8px;
 }
+
+.mdl-layout__content {
+  background-color: #ebebeb;
+}
