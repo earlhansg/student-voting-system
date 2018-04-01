@@ -7,6 +7,7 @@ import { DashboardRouting } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
 import { CollageComponent } from './collage/collage.component';
 import { DepartmentComponent } from './department/department.component';
+import { OfficerComponent } from './officer/officer.component';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { DepartmentComponent } from './department/department.component';
   declarations: [
     DashboardComponent,
     CollageComponent,
-    DepartmentComponent
+    DepartmentComponent,
+    OfficerComponent
     ]
 })
 export class DashboardModule { }
