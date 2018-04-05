@@ -10,3 +10,16 @@
 /*body {
   overflow-y: hidden;
 }*/
+
+.mdl-textfield__label {
+  font-size: 13px !important;
+}
+
+#opt .mdl-list__item.is-active {
+  color: #313c4e !important;
+  background-color: #ffffff !important;
+}
+
+#opt .mdl-list__item.is-active:hover {
+  background-color: whitesmoke !important;
+}

@@ -20,6 +20,7 @@
       "prefix": "app",
       "styles": [
         "assets/css/mdl-light-blue.min.css",
+        "../node_modules/@angular-mdl/select/select.css",
         "assets/css/material-icons.css",
         "assets/css/global.css"
       ],
