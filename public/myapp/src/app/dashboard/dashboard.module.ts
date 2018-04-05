@@ -12,6 +12,7 @@ import { CollageComponent } from './collage/collage.component';
 import { DepartmentComponent } from './department/department.component';
 import { OfficerComponent } from './officer/officer.component';
 import { RegisterComponent } from './officer/register/register.component';
+import { StudentComponent } from './student/student.component';
 
 @NgModule({
   imports: [
@@ -26,7 +27,8 @@ import { RegisterComponent } from './officer/register/register.component';
     CollageComponent,
     DepartmentComponent,
     OfficerComponent,
-    RegisterComponent
+    RegisterComponent,
+    StudentComponent
     ]
 })
 export class DashboardModule { }
