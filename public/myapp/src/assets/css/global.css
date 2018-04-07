@@ -34,3 +34,10 @@
     width: calc(40% - 16px);
   }
 }
+
+.subHeader > h3 {
+  margin: 0 !important;
+}
+.subHeader > h4 {
+  margin: 0 !important;
+}
