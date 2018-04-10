@@ -71,7 +71,7 @@ mdl-icon {
     color: white;
     padding: 0 8px 0 5px;
     border-radius: 10px;
-    margin-right: 12px;
+    margin-right: 30px;
 }
 .name {
   color: #929292;
@@ -95,6 +95,8 @@ mdl-icon {
   width: 48px;
   height: 54px;
   float: left;
+  margin-left: 35px;
+  margin-top: 15px;
 }
 .votes {
   font-size: 18px;
@@ -102,34 +104,60 @@ mdl-icon {
   float: right;
 }
 
-@media screen and (max-width: 768px) {
+.candidates-info {
+  text-align: left;
+  position: relative;
+  left: 15px;
+  top: 15px;
+}
+
+.status {
+  margin-top: 15px;
+}
+
+/*@media screen and (max-width: 768px) {
   #candidates img {
     margin-left: 35px;
   }
   .rank {
     margin-right: 30px;
   }
-}
+
+}*/
 
 @media screen and (max-width: 425px) {
-  .rank {
-    font-size: 20px;
+  #candidates img {
+    margin-left: 10px;
   }
   .name {
-    font-size: 15px;
-  }
-  .course {
     font-size: 12px;
   }
+  .course {
+    font-size: 9px;
+  }
+
+}
+
+@media screen and (max-width: 375px) {
+  #candidates img {
+    margin-left: 0;
+  }
+  .rank {
+    margin-right: 9px;
+  }
   .votes {
-    font-size: 30px;
-    color: #929292;
+    font-size: 16px;
   }
 }
 
-.candidates-info {
-  text-align: left;
-  position: relative;
-  left: 15px;
-  top: 5px;
+@media screen and (max-width: 320px) {
+  #candidates img {
+    width: 27px;
+    height: 35px;
+    margin-top: 30px;
+  }
+  .name {
+    font-size: 10px;
+    font-weight: bold;
+  }
 }
