@@ -1,0 +1,62 @@
+<div class="mdl-grid">
+    <div class="mdl-layout-spacer"></div>
+      <div id="college" class="mdl-cell mdl-cell--6-col">
+        <div class="mdl-grid container mdl-grid--no-spacing">
+          <div id="college-header" class="mdl-cell mdl-cell--12-col container1">
+            <div class="mdl-grid container">
+              <div class="mdl-cell mdl-cell--4-col mdl-cell--3-col-tablet mdl-cell--2-col-phone">
+                <button mdl-button #btn2="mdlButton" (click)="m2.toggle($event, btn2)" mdl-button-type="icon" mdl-ripple><mdl-icon>more_vert</mdl-icon></button>
+                  <mdl-menu #m2="mdlMenu" mdl-menu-position="bottom-left">
+                     <mdl-menu-item mdl-ripple>College of Technology</mdl-menu-item>
+                     <mdl-menu-item mdl-ripple>Collge of Engeneering</mdl-menu-item>
+                  </mdl-menu>
+              </div>
+            </div>
+            <!-- end of mdl-grid -->
+            <div class="mdl-grid container">
+              <div class="mdl-layout-spacer"></div>
+                <div id="boarder-header" class="mdl-cell mdl-cell--6-col">
+                  <p>
+                    <i class="fa fa-trophy"></i>
+                  </p>
+                  <h3>College of Technology</h3>
+                  <!-- <button mdl-button (click)="goTO()">
+                     President
+                  </button> -->
+                  <button mdl-button #btn1="mdlButton" (click)="m1.toggle($event, btn1)">
+                    President
+                  </button>
+                  <mdl-menu #m1="mdlMenu" mdl-menu-position="bottom-left">
+                    <mdl-menu-item mdl-ripple (click)="action()">President</mdl-menu-item>
+                    <mdl-menu-item mdl-ripple (click)="action()">Vice Pres.</mdl-menu-item>
+                    <mdl-menu-item mdl-ripple (click)="action()">Secretary</mdl-menu-item>
+                    <mdl-menu-item mdl-ripple (click)="action()">Auditor</mdl-menu-item>
+                  </mdl-menu>
+
+                </div>
+                <!-- end of boarder-header -->
+              <div class="mdl-layout-spacer"></div>
+            </div>
+            <!-- end of mdl-grid -->
+          </div>
+          <!-- end of college-header -->
+        </div>
+        <!-- end of mdl-grid -->
+        <div id="board-tally" class="mdl-grid container">
+          <div id="candidates" class="mdl-cell mdl-cell--9-col mdl-cell--4-col-tablet">
+            <img src="../../../../assets/images/userpicture.png" alt="">
+            <div class="candidates-info">
+              <h3 class="name">Earl Hans Genoso</h3>
+              <h3 class="course">IT</h3>
+            </div>
+          </div>
+          <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet">
+            <span class="rank">1st</span>
+            <h3 class="votes">2,000</h3>
+          </div>
+        </div>
+        <!-- end of mdl-grid -->
+      </div>
+      <!-- end of college -->
+    <div class="mdl-layout-spacer"></div>
+</div>

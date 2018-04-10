@@ -8,6 +8,7 @@ import { OfficerComponent } from './officer/officer.component';
 import { RegisterComponent } from './officer/register/register.component';
 import { StudentComponent } from './student/student.component';
 import { TallyComponent } from './tally/tally.component';
+import { TallyCollegeComponent } from './tally/tally-college/tally-college.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent,
@@ -36,7 +37,13 @@ const routes: Routes = [
       },
       {
             path: 'tally',
-            component: TallyComponent
+            component: TallyComponent,
+            children:[
+              {
+                path:'college',
+                component: TallyCollegeComponent
+              }
+            ]
       }
 
     ]

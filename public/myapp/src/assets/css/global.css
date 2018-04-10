@@ -23,6 +23,7 @@
 #opt .mdl-list__item.is-active:hover {
   background-color: whitesmoke !important;
 }
+
 @media screen and (max-width: 425px) {
   #loginCredential {
     width: calc(96% - 16px);
@@ -39,5 +40,9 @@
   margin: 0 !important;
 }
 .subHeader > h4 {
+  margin: 0 !important;
+}
+
+.no-margin {
   margin: 0 !important;
 }

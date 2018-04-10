@@ -1,0 +1,135 @@
+#college {
+  background-color: #ffffff;
+  margin-top: 20px;
+}
+
+#college-header {
+  background-color: #0aa8fc;
+}
+.container {
+  padding-top: 0 !important;
+  padding-right: 0 !important;
+  padding-bottom: 0 !important;
+  padding-left: 0 !important;
+}
+
+#boarder-header {
+  text-align: center;
+}
+
+#boarder-header p {
+  font-size: 40px;
+  color: #fec63d;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+#boarder-header h3 {
+  font-size: 15px;
+  color: #ffffff;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+#boarder-header .mdl-button {
+  margin-top: 2px;
+  color: #ffffff;
+  border-radius: 33px;
+  font-size: 12px;
+  border: 1px solid #ffffff;
+  padding: 0 16px;
+  height: 23px;
+  width: 98px;
+  line-height: 1;
+}
+
+mdl-icon {
+  color: #ffffff !important;
+}
+
+@media screen and (max-width: 425px) {
+  #boarder-header p {
+    font-size: 30px;
+  }
+
+  #boarder-header h3 {
+    font-size: 14px;
+  }
+
+  #boarder-header .mdl-button {
+    margin-top: 0px;
+    margin-bottom: 5px;
+  }
+}
+
+.rank {
+    margin: 0;
+    text-align: right;
+    font-size: 12px;
+    float: right;
+    background: #4eb027;
+    color: white;
+    padding: 0 8px 0 5px;
+    border-radius: 10px;
+    margin-right: 12px;
+}
+.name {
+  color: #929292;
+  font-size: 13px;
+  margin: 0 !important;
+  padding: 0 !important;
+
+}
+.course {
+  color: #929292;
+  font-size: 10px;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 10px;
+}
+#board-tally {
+  border: 1px solid #ebebeb;
+  /*justify-content:center;*/
+}
+#candidates img{
+  width: 48px;
+  height: 54px;
+  float: left;
+}
+.votes {
+  font-size: 18px;
+  color: #929292;
+  float: right;
+}
+
+@media screen and (max-width: 768px) {
+  #candidates img {
+    margin-left: 35px;
+  }
+  .rank {
+    margin-right: 30px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .rank {
+    font-size: 20px;
+  }
+  .name {
+    font-size: 15px;
+  }
+  .course {
+    font-size: 12px;
+  }
+  .votes {
+    font-size: 30px;
+    color: #929292;
+  }
+}
+
+.candidates-info {
+  text-align: left;
+  position: relative;
+  left: 15px;
+  top: 5px;
+}
