@@ -9,6 +9,7 @@ import { RegisterComponent } from './officer/register/register.component';
 import { StudentComponent } from './student/student.component';
 import { TallyComponent } from './tally/tally.component';
 import { TallyCollegeComponent } from './tally/tally-college/tally-college.component';
+import { ElectionComponent } from './election/election.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent,
@@ -44,7 +45,11 @@ const routes: Routes = [
                 component: TallyCollegeComponent
               }
             ]
-      }
+      },
+      {
+            path: 'election',
+            component: ElectionComponent
+      },
 
     ]
   }
