@@ -16,6 +16,7 @@ import { StudentComponent } from './student/student.component';
 import { TallyComponent } from './tally/tally.component';
 import { TallyCollegeComponent } from './tally/tally-college/tally-college.component';
 import { ElectionComponent } from './election/election.component';
+import { TallyDepartmentComponent } from './tally/tally-department/tally-department.component';
 
 @NgModule({
   imports: [
@@ -34,7 +35,8 @@ import { ElectionComponent } from './election/election.component';
     StudentComponent,
     TallyComponent,
     TallyCollegeComponent,
-    ElectionComponent
+    ElectionComponent,
+    TallyDepartmentComponent
     ]
 })
 export class DashboardModule { }

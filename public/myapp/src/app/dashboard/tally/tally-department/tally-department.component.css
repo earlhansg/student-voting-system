@@ -1,0 +1,163 @@
+#department {
+  background-color: #ffffff;
+  margin-top: 20px;
+}
+
+#department-header {
+  background-color: #26a69a;
+}
+.container {
+  padding-top: 0 !important;
+  padding-right: 0 !important;
+  padding-bottom: 0 !important;
+  padding-left: 0 !important;
+}
+
+#boarder-header {
+  text-align: center;
+}
+
+#boarder-header p {
+  font-size: 40px;
+  color: #fec63d;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+#boarder-header h3 {
+  font-size: 15px;
+  color: #ffffff;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+#boarder-header .mdl-button {
+  margin-top: 2px;
+  color: #ffffff;
+  border-radius: 33px;
+  font-size: 12px;
+  border: 1px solid #ffffff;
+  padding: 0 16px;
+  height: 23px;
+  width: 98px;
+  line-height: 1;
+}
+
+mdl-icon {
+  color: #ffffff !important;
+}
+
+@media screen and (max-width: 425px) {
+  #boarder-header p {
+    font-size: 30px;
+  }
+
+  #boarder-header h3 {
+    font-size: 14px;
+  }
+
+  #boarder-header .mdl-button {
+    margin-top: 0px;
+    margin-bottom: 5px;
+  }
+}
+
+.rank {
+    margin: 0;
+    text-align: right;
+    font-size: 12px;
+    float: right;
+    background: #4eb027;
+    color: white;
+    padding: 0 8px 0 5px;
+    border-radius: 10px;
+    margin-right: 30px;
+}
+.name {
+  color: #929292;
+  font-size: 13px;
+  margin: 0 !important;
+  padding: 0 !important;
+
+}
+.course {
+  color: #929292;
+  font-size: 10px;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 10px;
+}
+#board-tally {
+  border: 1px solid #ebebeb;
+  /*justify-content:center;*/
+}
+#candidates img{
+  width: 48px;
+  height: 54px;
+  float: left;
+  margin-left: 35px;
+  margin-top: 15px;
+}
+.votes {
+  font-size: 18px;
+  color: #929292;
+  float: right;
+}
+
+.candidates-info {
+  text-align: left;
+  position: relative;
+  left: 15px;
+  top: 15px;
+}
+
+.status {
+  margin-top: 15px;
+}
+
+/*@media screen and (max-width: 768px) {
+  #candidates img {
+    margin-left: 35px;
+  }
+  .rank {
+    margin-right: 30px;
+  }
+
+}*/
+
+@media screen and (max-width: 425px) {
+  #candidates img {
+    margin-left: 10px;
+  }
+  .name {
+    font-size: 12px;
+  }
+  .course {
+    font-size: 9px;
+  }
+
+}
+
+@media screen and (max-width: 375px) {
+  #candidates img {
+    margin-left: 0;
+  }
+  .rank {
+    margin-right: 9px;
+  }
+  .votes {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  #candidates img {
+    width: 27px;
+    height: 35px;
+    margin-top: 30px;
+  }
+  .name {
+    font-size: 10px;
+    font-weight: bold;
+  }
+}

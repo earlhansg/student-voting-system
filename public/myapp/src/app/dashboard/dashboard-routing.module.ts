@@ -10,6 +10,7 @@ import { StudentComponent } from './student/student.component';
 import { TallyComponent } from './tally/tally.component';
 import { TallyCollegeComponent } from './tally/tally-college/tally-college.component';
 import { ElectionComponent } from './election/election.component';
+import { TallyDepartmentComponent } from './tally/tally-department/tally-department.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent,
@@ -43,6 +44,10 @@ const routes: Routes = [
               {
                 path:'college',
                 component: TallyCollegeComponent
+              },
+              {
+                path:'department',
+                component: TallyDepartmentComponent
               }
             ]
       },
