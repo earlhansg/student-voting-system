@@ -10,12 +10,15 @@ const routes: Routes = [
   { path: '', component: ElectionComponent,
     children: [
       {
-            path: 'create',
-            component: NewElectionComponent
+            path: '', redirectTo: 'list', pathMatch: 'full'
       },
       {
             path: 'list',
-            component: ListElectionComponent
+            component: ListElectionComponent,
+      },
+      {
+            path:'create',
+            component: NewElectionComponent
       }
     ]
   }

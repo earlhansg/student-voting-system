@@ -8,15 +8,11 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class ElectionComponent implements OnInit {
 
-  visibility: boolean = false;
   constructor(private route: ActivatedRoute,
               private router: Router) { }
 
   ngOnInit() {
   }
 
-  addElection() {
-    this.visibility = true;
-  }
 
 }

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
+
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-election',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListElectionComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router,
+              private _location: Location) { }
 
   ngOnInit() {
+
+  }
+
+  goto() {
+    this._location.back();
+    // this.router.navigate(['']);
   }
 
 }
