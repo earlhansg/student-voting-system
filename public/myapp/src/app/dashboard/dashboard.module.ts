@@ -4,6 +4,7 @@ import { MdlModule } from '@angular-mdl/core';
 
 import { MdlSelectModule } from '@angular-mdl/select';
 import { MdlPopoverModule } from '@angular-mdl/popover';
+import { MdlDatePickerModule } from '@angular-mdl/datepicker';
 
 import { DashboardRouting } from './dashboard-routing.module';
 
@@ -17,6 +18,7 @@ import { TallyComponent } from './tally/tally.component';
 import { TallyCollegeComponent } from './tally/tally-college/tally-college.component';
 import { ElectionComponent } from './election/election.component';
 import { TallyDepartmentComponent } from './tally/tally-department/tally-department.component';
+import { NewElectionComponent } from './election/new-election/new-election.component';
 
 @NgModule({
   imports: [
@@ -24,7 +26,8 @@ import { TallyDepartmentComponent } from './tally/tally-department/tally-departm
     DashboardRouting,
     MdlModule,
     MdlSelectModule,
-    MdlPopoverModule
+    MdlPopoverModule,
+    MdlDatePickerModule
   ],
   declarations: [
     DashboardComponent,
@@ -36,7 +39,8 @@ import { TallyDepartmentComponent } from './tally/tally-department/tally-departm
     TallyComponent,
     TallyCollegeComponent,
     ElectionComponent,
-    TallyDepartmentComponent
+    TallyDepartmentComponent,
+    NewElectionComponent
     ]
 })
 export class DashboardModule { }

@@ -11,6 +11,7 @@ import { TallyComponent } from './tally/tally.component';
 import { TallyCollegeComponent } from './tally/tally-college/tally-college.component';
 import { ElectionComponent } from './election/election.component';
 import { TallyDepartmentComponent } from './tally/tally-department/tally-department.component';
+import { NewElectionComponent } from './election/new-election/new-election.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent,
@@ -53,7 +54,17 @@ const routes: Routes = [
       },
       {
             path: 'election',
-            component: ElectionComponent
+            component: ElectionComponent,
+            children:[
+              {
+                path:'create',
+                component: NewElectionComponent
+              },
+              {
+                path:':id',
+                component: NewElectionComponent
+              }
+            ]
       },
 
     ]

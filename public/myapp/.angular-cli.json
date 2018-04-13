@@ -21,6 +21,7 @@
       "styles": [
         "assets/css/mdl-light-blue.min.css",
         "../node_modules/@angular-mdl/select/select.css",
+        "../node_modules/@angular-mdl/datepicker/datepicker.css",
         "assets/css/material-icons.css",
         "assets/css/global.css"
       ],

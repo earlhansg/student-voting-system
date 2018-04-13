@@ -12,23 +12,11 @@
         </div>
     </div>
   <!-- end of mdl-grid -->
-    <div class="mdl-grid">
+    <router-outlet></router-outlet>
+    <!-- <div class="mdl-grid"  *ngIf="!this.visibility">
       <div class="mdl-layout-spacer"></div>
         <div class="mdl-cell mdl-cell--10-col">
 
-          <!-- <div class="select">
-            <form>
-              <mdl-select id="opt" label="President">
-                <mdl-option>Vice President</mdl-option>
-                <mdl-option>Secretary</mdl-option>
-              </mdl-select>
-            </form>
-
-            <button mdl-button
-                    class="btn-add">
-                    <i class="fa fa-plus"></i>
-            </button>
-          </div> -->
           <div class="mdl-grid container">
             <div class="mdl-cell mdl-cell--4-col mdl-cell--3-col-tablet mdl-cell--2-col-phone">
               <form class="select">
@@ -39,8 +27,8 @@
               </form>
             </div>
             <div class="mdl-cell mdl-cell--8-col mdl-cell--5-col-tablet mdl-cell--2-col-phone">
-              <button mdl-button
-                      class="btn-add">
+              <button mdl-button class="btn-add"
+                       [routerLink]="['create']" (click)="addElection()">
                       <i class="fa fa-plus"></i>
               </button>
             </div>
@@ -82,10 +70,10 @@
 
               </tbody>
             </table>
-          </div>
+          </div> -->
           <!-- book-table -->
-        </div>
+        <!-- </div>
       <div class="mdl-layout-spacer"></div>
-    </div>
+    </div> -->
   <!-- end of mdl-grid -->
-</div>
+<!-- </div> -->

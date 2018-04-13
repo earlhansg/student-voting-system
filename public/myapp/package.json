@@ -13,6 +13,7 @@
   "private": true,
   "dependencies": {
     "@angular-mdl/core": "^4.0.8",
+    "@angular-mdl/datepicker": "^5.0.0",
     "@angular-mdl/popover": "^0.10.0",
     "@angular-mdl/select": "^0.13.0",
     "@angular/animations": "^5.2.0",
@@ -25,6 +26,7 @@
     "@angular/platform-browser-dynamic": "^5.2.0",
     "@angular/router": "^5.2.0",
     "core-js": "^2.4.1",
+    "moment": "^2.22.0",
     "rxjs": "^5.5.6",
     "zone.js": "^0.8.19"
   },
