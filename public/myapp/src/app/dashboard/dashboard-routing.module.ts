@@ -1,3 +1,4 @@
+import { NgModule } from '@angular/core';
 
 import { RouterModule, Routes } from '@angular/router';
 
@@ -54,22 +55,12 @@ const routes: Routes = [
       },
       {
             path: 'election',
-            component: ElectionComponent,
-            children:[
-              {
-                path:'create',
-                component: NewElectionComponent
-              },
-              {
-                path:':id',
-                component: NewElectionComponent
-              }
-            ]
-      },
-
+            loadChildren: './election/election.module#ElectionModule'
+      }
     ]
-  }
 
+  }
+  
 ];
 
 export const DashboardRouting = RouterModule.forChild(routes);

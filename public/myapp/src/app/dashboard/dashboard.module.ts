@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MdlModule } from '@angular-mdl/core';
 
+
 import { MdlSelectModule } from '@angular-mdl/select';
 import { MdlPopoverModule } from '@angular-mdl/popover';
 import { MdlDatePickerModule } from '@angular-mdl/datepicker';
@@ -16,9 +17,10 @@ import { RegisterComponent } from './officer/register/register.component';
 import { StudentComponent } from './student/student.component';
 import { TallyComponent } from './tally/tally.component';
 import { TallyCollegeComponent } from './tally/tally-college/tally-college.component';
-import { ElectionComponent } from './election/election.component';
+// import { ElectionComponent } from './election/election.component';
 import { TallyDepartmentComponent } from './tally/tally-department/tally-department.component';
-import { NewElectionComponent } from './election/new-election/new-election.component';
+// import { NewElectionComponent } from './election/new-election/new-election.component';
+// import { ListElectionComponent } from './election/list-election/list-election.component';
 
 @NgModule({
   imports: [
@@ -38,9 +40,7 @@ import { NewElectionComponent } from './election/new-election/new-election.compo
     StudentComponent,
     TallyComponent,
     TallyCollegeComponent,
-    ElectionComponent,
-    TallyDepartmentComponent,
-    NewElectionComponent
-    ]
+    TallyDepartmentComponent
+  ]
 })
 export class DashboardModule { }

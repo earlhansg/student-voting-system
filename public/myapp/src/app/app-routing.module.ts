@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule' },
   { path: 'vote', loadChildren: './vote/vote.module#VoteModule' }
 
+
 ];
 
 export const AppRouting = RouterModule.forRoot(routes, { useHash: false });

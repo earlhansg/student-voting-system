@@ -46,3 +46,19 @@
 .no-margin {
   margin: 0 !important;
 }
+
+@media screen and (max-width: 320px) {
+
+  #opt .material-icons {
+    font-size: 18px !important;
+    line-height: 1.5 !important;
+  }
+
+  #opt .mdl-list__item-primary-content {
+    font-size: 12px;
+  }
+  #opt .mdl-list__item {
+    padding: 11px;
+    min-height: 34px;
+  }
+}
