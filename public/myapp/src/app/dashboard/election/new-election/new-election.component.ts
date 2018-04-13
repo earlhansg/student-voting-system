@@ -1,24 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-import { MdlDatePickerService } from '@angular-mdl/datepicker';
-import * as moment from 'moment';
+
+import { datePickerService } from '../../shared/datePicker.service';
 
 @Component({
   selector: 'app-new-election',
   templateUrl: './new-election.component.html',
-  styleUrls: ['./new-election.component.css']
+  styleUrls: ['./new-election.component.css'],
+  providers: [datePickerService]
 })
 export class NewElectionComponent implements OnInit {
 
   public selectedDate: any;
-  constructor(private datePicker: MdlDatePickerService) { }
+  constructor(private dateService: datePickerService) { }
 
   ngOnInit() {
   }
 
-  public pickADate($event: MouseEvent) {
-    this.datePicker.selectDate(this.selectedDate, {openFrom: $event}).subscribe( (selectedDate: Date) => {
-      this.selectedDate = selectedDate ? moment(selectedDate) : null;
-    });
+  pickADate($event: MouseEvent) {
+    this.dateService.pickADate($event);
   }
 
 }
