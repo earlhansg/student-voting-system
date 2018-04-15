@@ -19,7 +19,6 @@ export class ListElectionComponent implements OnInit {
 
   goto() {
     this._location.back();
-    // this.router.navigate(['']);
   }
 
 }

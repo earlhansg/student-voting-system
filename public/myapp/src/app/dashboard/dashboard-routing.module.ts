@@ -14,6 +14,7 @@ import { ElectionComponent } from './election/election.component';
 import { TallyDepartmentComponent } from './tally/tally-department/tally-department.component';
 import { NewElectionComponent } from './election/new-election/new-election.component';
 
+
 const routes: Routes = [
   { path: '', component: DashboardComponent,
     children: [
@@ -56,11 +57,15 @@ const routes: Routes = [
       {
             path: 'election',
             loadChildren: './election/election.module#ElectionModule'
+      },
+      {
+            path: 'position',
+            loadChildren: './position/position.module#PositionModule'
       }
     ]
 
   }
-  
+
 ];
 
 export const DashboardRouting = RouterModule.forChild(routes);
