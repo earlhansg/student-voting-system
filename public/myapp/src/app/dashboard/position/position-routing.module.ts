@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { PositionComponent } from './position.component';
 import { PositionCollegeComponent } from './position-college/position-college.component';
+import { PositionDepartmentComponent } from './position-department/position-department.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,10 @@ const routes: Routes = [
     {
           path: 'college',
           component: PositionCollegeComponent
+    },
+    {
+          path: 'department',
+          component: PositionDepartmentComponent
     }
     ]
   }

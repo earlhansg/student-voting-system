@@ -11,6 +11,7 @@ import { PositionRouting } from './position-routing.module';
 
 import { PositionComponent } from './position.component';
 import { PositionCollegeComponent } from './position-college/position-college.component';
+import { PositionDepartmentComponent } from './position-department/position-department.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { PositionCollegeComponent } from './position-college/position-college.co
   ],
   declarations: [
     PositionComponent,
-    PositionCollegeComponent
+    PositionCollegeComponent,
+    PositionDepartmentComponent
     ]
 })
 export class PositionModule { }
