@@ -14,7 +14,7 @@ const routes: Routes = [
       },
       {
             path: 'list',
-            component: ListElectionComponent,
+            component: ListElectionComponent
       },
       {
             path:'create',

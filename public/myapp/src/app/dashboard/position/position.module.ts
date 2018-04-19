@@ -10,6 +10,7 @@ import { MdlDatePickerModule } from '@angular-mdl/datepicker';
 import { PositionRouting } from './position-routing.module';
 
 import { PositionComponent } from './position.component';
+import { PositionCollegeComponent } from './position-college/position-college.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { PositionComponent } from './position.component';
     PositionRouting
   ],
   declarations: [
-    PositionComponent
+    PositionComponent,
+    PositionCollegeComponent
     ]
 })
 export class PositionModule { }
