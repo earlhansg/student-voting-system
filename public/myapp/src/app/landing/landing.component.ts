@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
+import { LandingService } from './landing.service';
+
 @Component({
   selector: 'app-landing',
   templateUrl: './landing.component.html',
@@ -9,13 +11,15 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class LandingComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
-              private router: Router) { }
+              private router: Router,
+              private landingService: LandingService) { }
 
   ngOnInit() {
   }
 
   goTO() {
-    this.router.navigate(['dashboard']);
+    console.log('click');
+    this.landingService.authLogin();
   }
 
 }
