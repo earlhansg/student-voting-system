@@ -6,6 +6,7 @@ var logger = require('morgan');
 var bodyParser = require('body-parser');
 
 const apiRoute = require('./routes/index');
+const passportSetup = require('./config/passport-setup');
 
 var app = express();
 
