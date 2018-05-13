@@ -84,7 +84,7 @@ mdl-textfield{
 }
 
 .mdl-button {
-  width: 106px;
+  width: 116px;
   height: 37px;
   margin-top: 35px;
   color: #e6f4fa;
@@ -140,4 +140,14 @@ mdl-textfield{
       height: 35px;
     }
 
+}
+
+.fa-google-plus {
+  color: red;
+  font-size: 16px;
+  margin-right: 2px;
+}
+a {
+  text-decoration: none;
+  color: #ffffff;
 }

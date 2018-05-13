@@ -9,7 +9,7 @@
                 <h3 class="h3">Student Government Voting System</h3>
               </div>
               <!-- end of logo -->
-              <div class="login">
+              <div class="login" [formGroup]="form">
                 <div class="login-label">
                   <label>Student ID </label>
                 </div>
@@ -17,14 +17,22 @@
                 <mdl-textfield
                   type="text"
                   label=""
+                  formControlName="userID"
                   autofocus></mdl-textfield>
 
-                  <button mdl-button (click)="goTO()">
-                     Gmail
-                  </button>
                   <!-- <button mdl-button (click)="goTO()">
-                     SIGN IN
+                     Gmail
                   </button> -->
+                  <!-- <a href="http://localhost:3000/auth/google">Gmail</a> -->
+                  <!-- <a href="{{apiUrl}}/auth/google">Gmail</a> -->
+                  <button mdl-button *ngIf="!userID.dirty">
+                     <a href="{{apiUrl}}/auth/google">
+                       <i class="fa fa-google-plus"></i> Sign in
+                     </a>
+                  </button>
+                  <button mdl-button (click)="goTO()" *ngIf="userID.dirty">
+                      Sign in
+                  </button>
               </div>
               <!-- end of login -->
           </div>

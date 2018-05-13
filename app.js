@@ -5,8 +5,12 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
 
-const apiRoute = require('./routes/index');
+const authRoutes = require('./routes/auth/auth');
+const profileRoutes = require('./routes/profile/pofile');
 const passportSetup = require('./config/passport-setup');
+const cookieSession = require('cookie-session');
+const keys = require('./config/keys');
+const passport = require('passport');
 
 var app = express();
 
@@ -14,18 +18,39 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+//set up cookie
+app.use(cookieSession({
+  maxAge: 24 * 60 * 60 * 1000,
+  keys: [keys.session.cookieKey]
+}));
+
+//initialize passport
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.use('/auth', authRoutes);
+app.use('/profile', profileRoutes);
+
+
+app.get('/', (req, res) => {
+  res.render('index');
+});
+
 app.use(logger('dev'));
 // app.use(express.json());
 // app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use('/api', apiRoute);
+// app.use('/api', apiRoute);
 
 
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+
+// catch 404 and forward to error h
 
 
 // catch 404 and forward to error handler
