@@ -6,7 +6,8 @@ var logger = require('morgan');
 var bodyParser = require('body-parser');
 
 const authRoutes = require('./routes/auth/auth');
-const profileRoutes = require('./routes/profile/pofile');
+const adminRoutes = require('./routes/profile/admin');
+const studentRoutes = require('./routes/student/student');
 const passportSetup = require('./config/passport-setup');
 const cookieSession = require('cookie-session');
 const keys = require('./config/keys');
@@ -29,7 +30,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use('/auth', authRoutes);
-app.use('/profile', profileRoutes);
+app.use('/admin', adminRoutes);
+app.use('/student', studentRoutes);
 
 
 app.get('/', (req, res) => {

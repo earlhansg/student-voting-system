@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-
-import { LandingService } from './landing.service';
-
-import { Observable } from 'rxjs/Observable';
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              import { Observable } from 'rxjs/Observable';
 
 
 @Component({
@@ -14,6 +11,7 @@ import { Observable } from 'rxjs/Observable';
 })
 export class LandingComponent implements OnInit {
 
+  user: any;
   apiUrl: string = `http://localhost:3000`;
 
   form: FormGroup;
@@ -21,9 +19,7 @@ export class LandingComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
               private router: Router,
-              private fb: FormBuilder,
-
-              private landingService: LandingService) { }
+              private fb: FormBuilder) { }
 
   ngOnInit() {
     this.buildForm();

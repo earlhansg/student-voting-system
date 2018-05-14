@@ -7,8 +7,6 @@ import { AppComponent } from './app.component';
 //routing
 import { AppRouting } from './app-routing.module';
 
-//service
-// import { ConfigService } from './shared/services/config.service';
 
 
 @NgModule({
@@ -20,10 +18,7 @@ import { AppRouting } from './app-routing.module';
     MdlModule,
     AppRouting
   ],
-  providers: [
-    // ConfigService,
-    // { provide: 'API_URL', useValue: 'http://localhost:3000' }
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MdlModule } from '@angular-mdl/core';
+import { HttpClientModule } from "@angular/common/http";
 
 
 import { MdlSelectModule } from '@angular-mdl/select';
@@ -19,6 +20,7 @@ import { TallyComponent } from './tally/tally.component';
 import { TallyCollegeComponent } from './tally/tally-college/tally-college.component';
 import { TallyDepartmentComponent } from './tally/tally-department/tally-department.component';
 
+
 @NgModule({
   imports: [
     CommonModule,
@@ -26,7 +28,8 @@ import { TallyDepartmentComponent } from './tally/tally-department/tally-departm
     MdlModule,
     MdlSelectModule,
     MdlPopoverModule,
-    MdlDatePickerModule
+    MdlDatePickerModule,
+    HttpClientModule
   ],
   declarations: [
     DashboardComponent,
@@ -38,6 +41,7 @@ import { TallyDepartmentComponent } from './tally/tally-department/tally-departm
     TallyComponent,
     TallyCollegeComponent,
     TallyDepartmentComponent
-  ]
+  ],
+  providers: []
 })
 export class DashboardModule { }

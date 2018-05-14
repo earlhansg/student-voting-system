@@ -11,8 +11,6 @@ import { LandingRouting } from './landing-routing.module';
 import { LandingComponent } from './landing.component';
 
 //Services
-import { LandingService } from './landing.service';
-import { ConfigService } from '../shared/services/config.service';
 
 
 @NgModule({
@@ -28,10 +26,6 @@ import { ConfigService } from '../shared/services/config.service';
   declarations: [
     LandingComponent
   ],
-  providers: [
-    LandingService,
-    ConfigService,
-    { provide: 'API_URL', useValue: 'http://localhost:3000' }
-  ]
+  providers: []
 })
 export class LandingModule { }
