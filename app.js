@@ -8,16 +8,37 @@ var bodyParser = require('body-parser');
 const authRoutes = require('./routes/auth/auth');
 const adminRoutes = require('./routes/profile/admin');
 const studentRoutes = require('./routes/student/student');
+const profileRoutes = require('./routes/profile/profile');
 const passportSetup = require('./config/passport-setup');
 const cookieSession = require('cookie-session');
 const keys = require('./config/keys');
 const passport = require('passport');
+const cors = require("cors");
+
+require("dotenv").config();
 
 var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
+
+
+app.use(cors({ credentials: true, origin: true }));
+
+
+app.use(logger('dev'));
+// app.use(express.json());
+// app.use(express.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// app.use('/api', apiRoute);
+
+
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
 
 //set up cookie
 app.use(cookieSession({
@@ -32,23 +53,12 @@ app.use(passport.session());
 app.use('/auth', authRoutes);
 app.use('/admin', adminRoutes);
 app.use('/student', studentRoutes);
+app.use('/profile', profileRoutes);
 
 
 app.get('/', (req, res) => {
   res.render('index');
 });
-
-app.use(logger('dev'));
-// app.use(express.json());
-// app.use(express.urlencoded({ extended: false }));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-
-// app.use('/api', apiRoute);
-
-
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
 
 
 

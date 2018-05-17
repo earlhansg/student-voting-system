@@ -23,7 +23,8 @@
         "../node_modules/@angular-mdl/select/select.css",
         "../node_modules/@angular-mdl/datepicker/datepicker.css",
         "assets/css/material-icons.css",
-        "assets/css/global.css"
+        "assets/css/global.css",
+        "../node_modules/font-awesome/css/font-awesome.css"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",

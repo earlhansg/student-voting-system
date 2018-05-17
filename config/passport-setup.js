@@ -3,35 +3,22 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const keys = require ("./keys");
 const knex = require ('../db/knex');
 
-// passport.serializeUser((user, done) => {
-//   let currentUser;
-//   let result = user.map(function(checkUser){
-//     if(checkUser.admin_id !== null){
-//       currentUser = checkUser.admin_id;
-//     }
-//     else {
-//       console.log("no user")
-//     }
-//   });
-//   done(null, currentUser);
-// });
-//
-// passport.deserializeUser((id, done) => {
-//   knex.select().table('admin')
-//     .where({
-//       admin_id: id
-//     })
-//     .then(function(user){
-//       done(null, user);
-//     });
-// })
 
-passport.serializeUser((user, done) => {
-  done(null, user);
+passport.serializeUser((currentUser, done) => {
+  done(null, currentUser.email);
 });
 
-passport.deserializeUser((id, done) => {
-  done(null, id);
+passport.deserializeUser((myEmail, done) => {
+  console.log(myEmail);
+  knex.select().table('user')
+    .where({
+      email: myEmail
+    })
+    .then(function(user){
+      console.log(user);
+      done(null, user);
+    })
+
 })
 
 
@@ -44,8 +31,46 @@ passport.use(
     callbackURL: '/auth/google/redirect'
 
   }, (accessToken, refreshToken, profile, done) => {
+      // console.log(profile);
+      // done(null, profile);
+      const googleEmail = profile.emails[ 0 ].value;
 
-      done(null, profile);
+      process.nextTick(function(){
+        knex.select().table('user')
+        .where({
+          email: googleEmail
+        })
+        .then(user => {
+          if(JSON.stringify(user) === '[]') {
+            knex.select().table('user')
+              .insert({
+                googleId: profile.id,
+                firstname: profile.name.givenName,
+                lastname: profile.name.familyName,
+                email: googleEmail
+              })
+              .then(function() {
+                knex.select().table('user')
+                  .where({
+                    email: googleEmail
+                  })
+                  .then(function(newUser){
+                    var data = JSON.stringify(newUser);
+                    var curr = JSON.parse(data);
+                    var currentUser = curr[ 0 ];
+                    return done(null, currentUser);
+                  });
+              })
+          } else {
+            var data = JSON.stringify(user);
+            var curr = JSON.parse(data);
+            var currentUser = curr[ 0 ];
+            return done(null, currentUser);
+          }
+
+
+        })
+      });
 
   })
 )

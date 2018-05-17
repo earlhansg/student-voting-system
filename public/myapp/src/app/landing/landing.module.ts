@@ -10,7 +10,7 @@ import { LandingRouting } from './landing-routing.module';
 //Component
 import { LandingComponent } from './landing.component';
 
-//Services
+import { AngularFontAwesomeModule } from "angular-font-awesome";
 
 
 @NgModule({
@@ -21,7 +21,8 @@ import { LandingComponent } from './landing.component';
     HttpModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFontAwesomeModule
   ],
   declarations: [
     LandingComponent

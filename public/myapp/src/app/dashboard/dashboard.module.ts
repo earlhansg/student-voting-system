@@ -21,6 +21,7 @@ import { TallyCollegeComponent } from './tally/tally-college/tally-college.compo
 import { TallyDepartmentComponent } from './tally/tally-department/tally-department.component';
 
 
+
 @NgModule({
   imports: [
     CommonModule,
