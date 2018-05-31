@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 import { InitializeComponent } from './initialize/initialize.component';
 
 //Services
-import { AuthService } from "./auth.service";
+import { UserService } from './shared/user.service';
 import { UserInitializeResolver } from "./initialize/initialize-resolver";
 
 //routing
@@ -31,7 +31,7 @@ import { AppRouting } from './app-routing.module';
     AngularFontAwesomeModule
   ],
   providers: [
-    AuthService,
+    UserService,
     UserInitializeResolver,
     { provide: "API_URL", useValue: "http://localhost:3000" }
   ],

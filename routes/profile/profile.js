@@ -30,6 +30,7 @@ router.get('/', (req, res) => {
 //user logout
 router.get('/logout', (req, res) => {
   req.logOut();
+  res.json(1);
 });
 
 

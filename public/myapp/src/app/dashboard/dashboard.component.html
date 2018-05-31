@@ -12,9 +12,10 @@
               <a class="mdl-navigation__link header-icon" [routerLink]="['/layout/l1']">
                 <i class="fa fa-bell" aria-hidden="true"></i>
               </a>
-              <a class="mdl-navigation__link header-icon" [routerLink]="['/layout/l2']">
+              <a class="mdl-navigation__link header-icon" (click)="signOut()">
                 <i class="fa fa-sign-out" aria-hidden="true"></i>
               </a>
+              <!-- <button  (click)="signOut()">Logout</button> -->
            </nav>
         </mdl-layout-header-row>
      </mdl-layout-header>
