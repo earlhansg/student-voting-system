@@ -17,7 +17,11 @@ export class InitializeComponent implements OnInit {
 
     localStorage.setItem("user", JSON.stringify(user));
 
-    setTimeout(() => this.router.navigate([ "/dashboard" ]), 1000);
+    if (user.status_id == 1 ) {
+      setTimeout(() => this.router.navigate([ "/dashboard" ]), 1000);
+    }
+    else
+      setTimeout(() => this.router.navigate([ "/vote" ]), 1000);
   }
 
 }

@@ -1,54 +1,31 @@
 const router = require('express').Router();
 const knex = require ('../../db/knex');
-const frontEndOriginUrl = process.env.FRONTEND_URL;
 
-// router.get('/getUserProfile', (req, res) => {
-//   if (req.isAuthenticated()) {
-//   const userResponse = req.user;
-//
-//   const user = {
-//     id: userResponse.id,
-//     firstName: userResponse.name.givenName,
-//     lastName: userResponse.name.familyName,
-//     email: userResponse.emails[ 0 ].value,
-//     gender: userResponse.gender,
-//     provider: userResponse.provider
-//   };
-//
-//   res.json(user);
-// }
-//   else res.redirect("http://localhost:4200");
-// });
+router.get('/getUserProfile', (req, res) => {
+const userValue = JSON.stringify(req.user);
+console.log(req.user);
+  if(req.isAuthenticated()) {
+    const userResponse = JSON.parse(userValue);
+    const currentUser = userResponse[ 0 ];
 
-
-// const authCheck = (req, res, next) => {
-//   if(!req.user){
-//     res.redirect('http://localhost:4200');
-//   }
-//   else {
-//     next();
-//   }
-// }
-
-// const authCheck = (req, res, next) => {
-//   if(!req.user){
-//     res.redirect('http://localhost:4200');
-//   }
-//   else {
-//     next();
-//   }
-// }
+    const user = {
+      id       : currentUser.id,
+      firstName: currentUser.firstname,
+      lastName : currentUser.lastname,
+      email    : currentUser.email,
+      gender   : currentUser.gender
+    };
+    res.json(user);
+  }
+    else res.redirect("http://localhost:4200");
+});
 
 // auth login
 router.get('/', (req, res) => {
-  // successRedirect: frontEndOriginUrl + "/initialize";
-  // res.redirect(frontEndOriginUrl + '/dashboard');
-  res.redirect("http://localhost:4200/dashboard");
+  res.redirect("http://localhost:4200/initialize");
 });
 
-// router.get('/', (req, res) => {
-//     console.log(req.user);
-// });
+
 
 
 module.exports = router;

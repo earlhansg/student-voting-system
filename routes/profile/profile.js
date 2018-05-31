@@ -2,16 +2,19 @@ const router = require('express').Router();
 const knex = require ('../../db/knex');
 
 router.get('/getUserProfile', (req, res) => {
-  if (req.isAuthenticated()) {
-  const userResponse = req.user;
+const userValue = JSON.stringify(req.user);
+
+if (req.isAuthenticated()) {
+  const userResponse = JSON.parse(userValue);
+  const currentUser = userResponse[ 0 ];
 
   const user = {
-    id: userResponse.id,
-    firstName: userResponse.name.givenName,
-    lastName: userResponse.name.familyName,
-    email: userResponse.emails[ 0 ].value,
-    gender: userResponse.gender,
-    provider: userResponse.provider
+    id: currentUser.id,
+    firstName: currentUser.firstname,
+    lastName: currentUser.lastname,
+    email: currentUser.email,
+    gender: currentUser.gender,
+    status_id: currentUser.status_id
   };
 
   res.json(user);
@@ -21,8 +24,12 @@ router.get('/getUserProfile', (req, res) => {
 
 // auth login
 router.get('/', (req, res) => {
-  console.log(req.user);
   res.redirect("http://localhost:4200/initialize");
+});
+
+//user logout
+router.get('/logout', (req, res) => {
+  req.logOut();
 });
 
 

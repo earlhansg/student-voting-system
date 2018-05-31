@@ -4,73 +4,47 @@ const keys = require ("./keys");
 const knex = require ('../db/knex');
 
 
-passport.serializeUser((currentUser, done) => {
-  done(null, currentUser.email);
+passport.serializeUser((user, done) => {
+  const currentUser = JSON.parse(user);
+  done(null, currentUser[ 0 ].id);
 });
 
-passport.deserializeUser((myEmail, done) => {
-  console.log(myEmail);
-  knex.select().table('user')
-    .where({
-      email: myEmail
-    })
+passport.deserializeUser((user_id, done) => {
+  knex
+    .select()
+    .table('user')
+    .where({ id: user_id })
     .then(function(user){
-      console.log(user);
       done(null, user);
     })
+});
 
-})
-
-
-
-passport.use(
-  new GoogleStrategy({
-    //options for the google strat
+passport.use(new GoogleStrategy({
     clientID: keys.google.clientID,
     clientSecret: keys.google.clientSecret,
     callbackURL: '/auth/google/redirect'
-
   }, (accessToken, refreshToken, profile, done) => {
-      // console.log(profile);
-      // done(null, profile);
-      const googleEmail = profile.emails[ 0 ].value;
-
-      process.nextTick(function(){
-        knex.select().table('user')
-        .where({
-          email: googleEmail
-        })
-        .then(user => {
-          if(JSON.stringify(user) === '[]') {
-            knex.select().table('user')
-              .insert({
-                googleId: profile.id,
-                firstname: profile.name.givenName,
-                lastname: profile.name.familyName,
-                email: googleEmail
-              })
-              .then(function() {
-                knex.select().table('user')
-                  .where({
-                    email: googleEmail
-                  })
-                  .then(function(newUser){
-                    var data = JSON.stringify(newUser);
-                    var curr = JSON.parse(data);
-                    var currentUser = curr[ 0 ];
-                    return done(null, currentUser);
-                  });
-              })
-          } else {
-            var data = JSON.stringify(user);
-            var curr = JSON.parse(data);
-            var currentUser = curr[ 0 ];
-            return done(null, currentUser);
-          }
-
-
-        })
+    process.nextTick(() => {
+      return knex
+        .select()
+        .table('user')
+        .where({ googleId: profile.id })
+        .then(user => user.length > 0 ? done(null, JSON.stringify(user)) : createUser(profile, done));
       });
+    })
+);
 
-  })
-)
+function createUser(profile, done) {
+  const user = {
+    googleId : profile.id,
+    firstname: profile.name.givenName,
+    lastname : profile.name.familyName,
+    email    : profile.emails[ 0 ].value
+  };
+
+  return knex('user')
+    .insert(user)
+    .returning('*')
+    .into('user')
+    .then(newUser => done(null, JSON.stringify(newUser)));
+}
