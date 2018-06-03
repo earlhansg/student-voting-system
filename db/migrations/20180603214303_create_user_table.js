@@ -3,7 +3,11 @@ exports.up = function(knex, Promise) {
     table.increments();
     table.integer('user_id').nullable().unique();
     table.string('googleId', 1000).nullable().unique();
-    table.integer('status_id').references('id').inTable('status').defaultTo(0);
+    table.string('username').nullable();
+    table.string('password').nullable();
+    table.integer('status_id').notNullable().defaultTo(0);
+    table.integer('college_id').notNullable().defaultTo(0);
+    table.integer('department_id').notNullable().defaultTo(0);
     table.string('firstname').nullable();
     table.string('lastname').nullable();
     table.string('middlename').nullable();
@@ -13,6 +17,10 @@ exports.up = function(knex, Promise) {
     table.boolean('is_active').notNullable().defaultTo(true);
     table.timestamp('created_at').defaultTo(knex.fn.now())
     table.timestamp('updated_at').defaultTo(knex.fn.now())
+
+    table.foreign('status_id').references('status.id');
+    table.foreign('college_id').references('college.id');
+    table.foreign('department_id').references('department.id');
   })
 }
 

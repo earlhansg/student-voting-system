@@ -14,5 +14,9 @@ router.get('/google/redirect', passport.authenticate('google'),(req, res) => {
    res.redirect("/profile/");
 });
 
+//local login passport
+router.post('/login', passport.authenticate('local'), (req,res) => {
+  console.log('passport');
+});
 
 module.exports = router;

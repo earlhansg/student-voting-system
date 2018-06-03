@@ -1,5 +1,6 @@
 const passport = require ('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
+const LocalStrategy = require('passport-local').Strategy;
 const keys = require ("./keys");
 const knex = require ('../db/knex');
 
@@ -33,6 +34,16 @@ passport.use(new GoogleStrategy({
       });
     })
 );
+
+passport.use(new LocalStrategy({
+    usernameField: 'email',
+    passwordField: 'password',
+    passReqToCallback: true,
+    session: false
+  }, => (ccessToken, refreshToken, profile, done) {
+     processUser(profile, done);
+  }
+));
 
 function createUser(profile, done) {
   const user = {
