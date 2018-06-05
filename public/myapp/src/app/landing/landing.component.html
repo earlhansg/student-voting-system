@@ -9,30 +9,41 @@
                 <h3 class="h3">Student Government Voting System</h3>
               </div>
               <!-- end of logo -->
-              <div class="login" [formGroup]="form">
-                <div class="login-label">
-                  <label>Student ID </label>
-                </div>
-                <!-- end of login-label -->
-                <mdl-textfield
-                  type="text"
-                  label=""
-                  formControlName="userID"
-                  autofocus></mdl-textfield>
+              <div class="login">
+                <form [formGroup]="form"
+                      (submit)="signIn($event, form.value)"
+                      novalidate>
+                      <div class="login-label">
+                        <label>Username </label>
+                      </div>
+                      <!-- end of login-label -->
+                      <mdl-textfield
+                        type="text"
+                        label=""
+                        formControlName="username"
+                        autofocus></mdl-textfield>
 
-                  <!-- <button mdl-button (click)="goTO()">
-                     Gmail
-                  </button> -->
-                  <!-- <a href="http://localhost:3000/auth/google">Gmail</a> -->
-                  <!-- <a href="{{apiUrl}}/auth/google">Gmail</a> -->
-                  <button mdl-button *ngIf="!userID.dirty">
-                     <a href="{{apiUrl}}/auth/google">
-                       <i class="fa fa-google-plus"></i> Sign in
-                     </a>
-                  </button>
-                  <button mdl-button (click)="goTO()" *ngIf="userID.dirty">
-                      Sign in
-                  </button>
+                      <div class="login-label">
+                        <label>Password </label>
+                      </div>
+
+                      <mdl-textfield
+                        type="password"
+                        label=""
+                        formControlName="password"
+                        autofocus></mdl-textfield>
+                        <button mdl-button
+                                *ngIf="!username.valid && !password.valid">
+                                 <a href="{{apiUrl}}/auth/google">
+                                   <i class="fa fa-google-plus"></i> Sign in
+                                 </a>
+                        </button>
+                        <button mdl-button type="submit"
+                                *ngIf="username.valid || password.valid"> Sign in
+                        </button>
+                </form>
+                <app-alert-message [errorType]="errorType"></app-alert-message>
+
               </div>
               <!-- end of login -->
           </div>

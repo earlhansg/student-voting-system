@@ -5,10 +5,15 @@ import { HttpModule } from '@angular/http';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+//Routing
 import { LandingRouting } from './landing-routing.module';
+
+//Service
+import { LandingService } from './landing.service';
 
 //Component
 import { LandingComponent } from './landing.component';
+import { AlertMessageComponent } from '../shared/component/alert-message/alert-message.component';
 
 import { AngularFontAwesomeModule } from "angular-font-awesome";
 
@@ -25,8 +30,12 @@ import { AngularFontAwesomeModule } from "angular-font-awesome";
     AngularFontAwesomeModule
   ],
   declarations: [
-    LandingComponent
+    LandingComponent,
+    AlertMessageComponent
   ],
-  providers: []
+  providers: [
+    LandingService,
+    { provide: "API_URL", useValue: "http://localhost:3000" }
+  ]
 })
 export class LandingModule { }

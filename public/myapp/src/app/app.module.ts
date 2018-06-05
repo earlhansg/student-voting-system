@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 import { InitializeComponent } from './initialize/initialize.component';
 
 //Services
-import { UserService } from './shared/user.service';
+import { UserService } from './shared/services/user.service';
 import { UserInitializeResolver } from "./initialize/initialize-resolver";
 
 //routing

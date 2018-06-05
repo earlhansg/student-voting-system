@@ -1,31 +1,31 @@
 const router = require('express').Router();
 const knex = require ('../../db/knex');
+const bcrypt = require('bcrypt-nodejs');
 
-router.get('/getUserProfile', (req, res) => {
-const userValue = JSON.stringify(req.user);
 
-  if(req.isAuthenticated()) {
-    const userResponse = JSON.parse(userValue);
-    const currentUser = userResponse[ 0 ];
+router.post('/createStudent', (req, res) => {
+  const userResponse = req.body;
+  const password = bcrypt.hashSync(req.body.password);
+  const student = {
+    firstname    : userResponse.firstname,
+    lastname     : userResponse.lastname,
+    middlename   : userResponse.middlename,
+    gender       : userResponse.gender,
+    address      : userResponse.address,
+    email        : userResponse.email,
+    username     : userResponse.username,
+    password     : password,
+    college_id   : userResponse.college_id,
+    department_id: userResponse.department_id
+  };
 
-    const user = {
-      id       : currentUser.id,
-      firstName: currentUser.firstname,
-      lastName : currentUser.lastname,
-      email    : currentUser.email,
-      gender   : currentUser.gender
-    };
-    res.json(user);
-  }
-    else res.redirect("http://localhost:4200");
+  return knex('user')
+    .insert(student)
+    .returning('*')
+    .into('user')
+    .then(newStudent => res.status(201).json(newStudent))
+    .catch(err => next(err));
 });
-
-// auth login
-router.get('/', (req, res) => {
-  res.redirect("http://localhost:4200/initialize");
-});
-
-
 
 
 module.exports = router;

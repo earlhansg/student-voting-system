@@ -9,11 +9,11 @@ if (req.isAuthenticated()) {
   const currentUser = userResponse[ 0 ];
 
   const user = {
-    id: currentUser.id,
+    id       : currentUser.id,
     firstName: currentUser.firstname,
-    lastName: currentUser.lastname,
-    email: currentUser.email,
-    gender: currentUser.gender,
+    lastName : currentUser.lastname,
+    email    : currentUser.email,
+    gender   : currentUser.gender,
     status_id: currentUser.status_id
   };
 
@@ -22,7 +22,7 @@ if (req.isAuthenticated()) {
   else res.redirect("http://localhost:4200");
 });
 
-// auth login
+
 router.get('/', (req, res) => {
   res.redirect("http://localhost:4200/initialize");
 });

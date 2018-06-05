@@ -3,6 +3,7 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const LocalStrategy = require('passport-local').Strategy;
 const keys = require ("./keys");
 const knex = require ('../db/knex');
+const bcrypt = require('bcrypt-nodejs');
 
 
 passport.serializeUser((user, done) => {
@@ -35,15 +36,37 @@ passport.use(new GoogleStrategy({
     })
 );
 
-passport.use(new LocalStrategy({
-    usernameField: 'email',
-    passwordField: 'password',
-    passReqToCallback: true,
-    session: false
-  }, => (ccessToken, refreshToken, profile, done) {
-     processUser(profile, done);
-  }
-));
+passport.use('local-login', new LocalStrategy({
+  usernameField : 'username',
+  passwordField : 'password',
+  passReqToCallback : true
+}, (req, username, password, done) => processUser({username, password}, done)));
+
+
+
+function processUser(profile, done) {
+  return findUserByEmailPassword(profile, done);
+}
+
+function findUserByEmailPassword({username, password}, done) {
+  return knex
+    .select()
+    .table('user')
+    .where({ email: username })
+    .then(result => {
+      const output = JSON.stringify(result);
+      const account = JSON.parse(output);
+
+      if (account.length > 0) {
+        const isPasswordValid = bcrypt.compareSync(password, account[ 0 ].password);
+
+        if (isPasswordValid) return done(null, output);
+        else return done(null, false, { message: "Invalid Password" });
+      }
+      else return done(null, false, { message: "User not found" });
+    })
+    .catch(err => done(err));
+}
 
 function createUser(profile, done) {
   const user = {
